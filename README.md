@@ -39,10 +39,10 @@ Requirements:
 ```powershell
 dotnet restore DeskNest.sln
 dotnet build DeskNest.sln -c Release
-dotnet publish src/DeskNest/DeskNest.csproj -c Release -r win-x64 --self-contained false -p:PublishSingleFile=true -o publish
+dotnet publish src/DeskNest/DeskNest.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish
 ```
 
-Or run `scripts/build-windows.ps1`. GitHub Actions also creates a downloadable `DeskNest-win-x64` artifact after every push to `main`.
+Or run `scripts/build-windows.ps1`. GitHub Actions also creates a downloadable, self-contained `DeskNest-win-x64` artifact after every push to `main`; the downloaded build does not require a separate .NET installation.
 
 ## Design choices
 
